@@ -16,7 +16,5 @@ public interface PriceMapper {
     PriceDto toDto(Optional<PriceDao> priceDao);
     @Mapping(target = "id", ignore = true)
     PriceDao toDao(PriceDto priceDto);
-
-    List<PriceDao> listtoDao(List<PriceDto> list);
-    List<PriceDto> listtoDto(List<PriceDao> list);
+    List<PriceDto> map(List<PriceDao> list);
 }

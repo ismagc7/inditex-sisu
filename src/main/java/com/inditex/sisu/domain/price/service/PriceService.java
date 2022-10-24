@@ -2,10 +2,9 @@ package com.inditex.sisu.domain.price.service;
 
 import com.inditex.sisu.domain.price.dto.PriceDto;
 import com.inditex.sisu.domain.price.dto.PriceRequestFilterDto;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface PriceService {
-    List<PriceDto> getAll();
-    List<PriceDto> getByFilter(PriceRequestFilterDto filter);
+    Page<PriceDto> getAllByFilter(PriceRequestFilterDto filter, Pageable pageable);
 }
