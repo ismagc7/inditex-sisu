@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
-import java.util.Currency;
 
 @Getter
 @Setter
@@ -14,11 +13,6 @@ import java.util.Currency;
 @NoArgsConstructor
 public class PriceRequestFilterDto {
     private Long brandId;
-    private Timestamp startDate;
-    private Timestamp endDate;
-    private Integer priceList;
+    private Timestamp date;
     private Long productId;
-    private Integer priority;
-    private Double price;
-    private Currency currency;
 }
