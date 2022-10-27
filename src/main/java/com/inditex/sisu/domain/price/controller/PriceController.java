@@ -6,6 +6,7 @@ import com.inditex.sisu.common.JSONResult;
 import com.inditex.sisu.common.Page;
 import com.inditex.sisu.domain.price.dto.PriceDto;
 import com.inditex.sisu.domain.price.dto.PriceRequestFilterDto;
+import com.inditex.sisu.domain.price.dto.PriceResponse;
 import com.inditex.sisu.domain.price.service.PriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -24,8 +25,7 @@ public class PriceController extends CommonController {
     private PriceService priceService;
 
     @GetMapping
-    public JSONResult<Page<PriceDto>> getByFilter(@ModelAttribute PriceRequestFilterDto filter, Pageable pageable) throws SQLException {
+    public JSONResult<Page<PriceResponse>> getByFilter(@ModelAttribute PriceRequestFilterDto filter, Pageable pageable) throws SQLException {
         return new JSONResult<>(priceService.getAllByFilter(filter,pageable));
     }
-
 }

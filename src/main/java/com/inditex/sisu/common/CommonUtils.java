@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
+import java.util.function.Consumer;
+
 @Getter
 @Component
 public class CommonUtils<T>
@@ -20,6 +22,12 @@ public class CommonUtils<T>
     public JSONResult<Page<T>> returnResult(Page<T> list)
     {
         return new JSONResult<>(list);
+    }
+
+    public static < T > void updateField ( Consumer < T > target , T sourceField ) {
+        if ( sourceField != null ) {
+            target.accept ( sourceField ) ;
+        }
     }
 
 }
